@@ -91,14 +91,14 @@ body{
 
 .answer-btn.correct {
     background-color: #e6fff0;
-    border-color: #a3f0c4;
-    color: #dc4535;;
+    border: 3px solid green;
+    color: green;
 }
 
 .answer-btn.incorrect {
     background-color: #fff0f0;
-    border-color: #ffbdbd;
-    color: #dc3545;
+    border: 3px solid red;
+    color: red;
 }
 
 .progress-bar {
@@ -126,8 +126,8 @@ body{
 .result-info {
     background-color: #f8f0e5;
     border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 30px;
+    padding: 20px 20px 14px;
+    margin-bottom: 14px;
 }
 
 .result-info p {
@@ -140,6 +140,14 @@ body{
     font-size: 1.5rem;
     font-weight: 600;
     color: #e86a33;
+}
+
+#result-image {
+    display: block;
+    max-width: 200px;
+    width: 100%;
+    height: auto;
+    margin: 10px auto 0;
 }
 
 button {

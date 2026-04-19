@@ -11,6 +11,7 @@ const scoreSpan = document.getElementById("score");
 const finalScoreSpan = document.getElementById("final-score");
 const maxScoreSpan = document.getElementById("max-score");
 const resultMessage = document.getElementById("result-message");
+const resultImage = document.getElementById("result-image");
 const restartButton = document.getElementById("restart-btn");
 const progressBar = document.getElementById("progress");
 
@@ -57,7 +58,7 @@ const quizQuestions = [
     answers: [
       { text: "April 10, 2026", correct: false },
       { text: "April 1, 2026", correct: true },
-      { text: "March 30, 2026", correct: true },
+      { text: "March 30, 2026", correct: false },
       { text: "April 5, 2026", correct: false },
     ],
   },
@@ -164,20 +165,24 @@ function showResults() {
 
   if(percentage === 100) {
     resultMessage.textContent = "Amazing! You are the #1 Artemis II fan!";
+    resultImage.src = "images/perfect.png";
   } else if (percentage >= 80) {
       resultMessage.textContent = "Great! Almost every question was correct.";
+      resultImage.src = "images/great.png";
   } else if (percentage >= 60) {
       resultMessage.textContent = "Good effort. More than half of the answers were correct.";
+      resultImage.src = "images/good.png";
   } else if (percentage >= 40) {
     resultMessage.textContent = "Most are incorrect..."
+    resultImage.src = "images/okay.png";
   } else {
     resultMessage.textContent = "Maybe next time.";
+    resultImage.src = "images/try-again.png";
   }
 }
 
 
 function restartQuiz() {
   resultScreen.classList.remove("active");
-
-  startQuiz();
+  startScreen.classList.add("active");
 }
